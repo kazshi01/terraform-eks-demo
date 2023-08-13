@@ -22,6 +22,12 @@ helm uninstall aws-load-balancer-controller -n kube-system
 
 ⚫️deply⇨service⇨ingressの順でapply
 
+※外部通信がないときの通信確認方法（ポートフォワード）
+ 　⇨ `website pod`への接続の場合
+```
+kubectl port-forward svc/website 8080:80
+```
+
 ※注意事項
 
 ```
