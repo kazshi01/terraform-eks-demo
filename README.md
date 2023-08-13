@@ -6,7 +6,13 @@
 source tfvars.env
 ```
 
-⚫️vpc⇨rds⇨eks⇨albの順で、terraform apply
+⚫️vpc⇨rds⇨eksの順で、terraform apply
+
+⚫️~/.kube/configの更新（kubectlコマンドを作成したEKSで使用できるようにする）
+
+```
+aws eks update-kubeconfig --name <cluster_name>  --region ap-northeast-1
+```
 
 ⚫️`AWS Load Balancer Controller`のインストール
 
