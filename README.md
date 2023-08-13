@@ -31,5 +31,5 @@ kubectl port-forward svc/website 8080:80
 ※注意事項
 
 ```
-Serviceのタイプは、NodePortを指定する
+AWS Load Balancer Controllerを使用するときは、Serviceのタイプは、NodePortを指定する
 ```
