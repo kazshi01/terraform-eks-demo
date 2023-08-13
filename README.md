@@ -14,6 +14,8 @@ source tfvars.env
 aws eks update-kubeconfig --name <cluster_name>  --region ap-northeast-1
 ```
 
+⚫️albをterraform apply
+
 ⚫️`AWS Load Balancer Controller`のインストール
 
 ```
