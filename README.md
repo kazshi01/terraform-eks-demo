@@ -1,28 +1,20 @@
 # eks-demo
 
-⚫️aws/に移動し、環境変数の適用
+⚫️aws/に移動し、環境変数の適用(※内容をそれぞれに合わせて変更すること)
 
 ```
 source tfvars.env
 ```
 
+⚫️vpc⇨rds⇨eks の順で、terraform apply
 
-
-⚫️vpc⇨rds⇨eksの順で、terraform apply
-
-
-
-⚫️~/.kube/configの更新（kubectlコマンドを作成したEKSで使用できるようにする）
+⚫️~/.kube/config の更新（kubectl コマンドを作成した EKS で使用できるようにする）
 
 ```
 aws eks update-kubeconfig --name <cluster_name>  --region ap-northeast-1
 ```
 
-
-
-⚫️albをterraform apply
-
-
+⚫️alb を terraform apply
 
 ⚫️`AWS Load Balancer Controller`のインストール
 
@@ -36,19 +28,14 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller --set
 helm uninstall aws-load-balancer-controller -n kube-system
 ```
 
-
-
-⚫️deply⇨service⇨ingressの順でapply
-
-
+⚫️deply⇨service⇨ingress の順で apply
 
 ※外部通信がないときの通信確認方法（ポートフォワード）
- 　⇨ `website pod`への接続の場合
+　 ⇨ `website pod`への接続の場合
+
 ```
 kubectl port-forward svc/website 8080:80
 ```
-
-
 
 ※注意事項
 
