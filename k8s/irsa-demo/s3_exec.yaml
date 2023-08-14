@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: irsa-demo
+  labels:
+    app: irsa-demo
+spec:
+  template:
+    metadata:
+      labels:
+        app: irsa-demo
+    spec:
+      serviceAccountName: irsa-demo-sa  # ここに実際のService Accountの名前を設定する
+      containers:
+      - name: irsa-demo
+        image: amazon/aws-cli:latest
+        args: ["s3", "ls"]
+        # args: ["ec2", "describe-instances", "--region", "${var.aws_region}"] # この行はコメントされているためYAMLでは無視されます
+      restartPolicy: Never
