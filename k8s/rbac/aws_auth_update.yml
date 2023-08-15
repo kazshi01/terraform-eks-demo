@@ -8,10 +8,9 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::123456780000:role/default_node_group-eks-node-group-20230814013027675500000004
+      rolearn: arn:aws:iam::123456789012:role/default_node_group-eks-node-group-20230815012139713800000002
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
-      - system:masters
-      rolearn: arn:aws:iam::123456780000:role/RbacDemoRole
-      username: my-demo-user
-        
+      - demo:view
+      rolearn: arn:aws:iam::123456789012:role/RbacDemoRole
+      username: view-user
