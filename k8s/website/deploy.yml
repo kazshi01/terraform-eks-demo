@@ -21,8 +21,3 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-        resources:
-          limits:
-            cpu: "1" # CPUの最大値を1コアに制限
-            memory: "512Mi" # メモリの最大値を512Miに制限
-
